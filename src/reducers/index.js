@@ -1,9 +1,7 @@
-import { activities } from "./actvities";
-import { athletes } from "./athletes";
-import { count } from "./count";
+import { activities } from "./activities";
+import { athlete } from "./athlete";
 
 export {
-  count,
   activities,
-  athletes,
+  athlete,
 };

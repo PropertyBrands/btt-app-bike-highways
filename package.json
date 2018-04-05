@@ -55,6 +55,8 @@
     "instrument": false
   },
   "dependencies": {
+    "dotenv": "^5.0.1",
+    "dotenv-webpack": "^1.5.5",
     "history": "^4.7.2",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",
@@ -65,6 +67,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "strava-v3": "^1.14.0"
   }
 }

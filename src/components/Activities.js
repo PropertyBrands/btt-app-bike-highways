@@ -1,32 +1,31 @@
-import React from "react";
-import PropTypes from 'prop-types';
-import Activity from './Activity';
+import React from 'react'
+import { connect } from 'react-redux';
+import {Activity} from './Activity';
+import {getActivities} from "../actions/activities";
+import {LoadingGraphic} from "./LoadingGraphic";
 
-/**
- * Get a list of activities
- * @todo: get data from a webservice.
- */
-const getActivities = () => ([
-  {
-    title: 'Activity 1',
-  },
-  {
-    title: 'Activity 2',
-  },
-]);
+class Activities extends React.Component {
+  componentDidMount = () => {
+    this.props.getActivities()
+  };
 
-export const Activities = props =>  {
-  return (
-    <div className="activities-list">
-      <ul>
-        {getActivities().map((item, index) =>
-          <Activity key={index} title={item.title} />
-        )}
-      </ul>
-    </div>
-  );
-};
+  render = () => {
+    if(Object.keys(this.props.activities.items).length) {
+      return (
+        <div className="activities-list">
+          <ul>
+            {Object.keys(this.props.activities.items).map((item, index) =>
+              <Activity key={index} title={this.props.activities.items[item].name} />
+            )}
+          </ul>
+        </div>
+      );
+    }
+    return <LoadingGraphic />
+  };
+}
 
-Activities.propTypes = {
-  activities: PropTypes.arrayOf(PropTypes.object)
-};
+export default connect(
+  (state) => ({ activities: state.activities }),
+  { getActivities }
+)(Activities);

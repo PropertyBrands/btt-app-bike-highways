@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
@@ -11,6 +12,11 @@ module.exports = {
     'react-hot-loader/patch',
     './src/index.js'
   ],
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+  },
   module: {
     rules: [
       {
@@ -40,6 +46,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new Dotenv()
     // extractSass
   ],
   devServer: {

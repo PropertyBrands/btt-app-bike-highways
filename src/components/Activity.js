@@ -11,4 +11,6 @@ Activity.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-export default Activity;
+export {
+  Activity,
+};

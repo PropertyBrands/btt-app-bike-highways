@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { store } from './state/store';
-
-import { Profile, Activities } from './components'
+import { AthleteProfile, Activities } from './components';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -17,7 +16,7 @@ ReactDOM.render(
               <Link to="/my-profile">My Profile</Link>
             </header>
             <div style={{marginTop: '1.5em'}}>
-              <Route path="/my-profile" component={Profile} />
+              <Route path="/my-profile" component={AthleteProfile} />
               <Route path="/activities" component={Activities}/>
             </div>
           </div>
