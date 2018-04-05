@@ -15,8 +15,8 @@ const receiveAthlete = (athlete) => {
   }
 };
 
-export function getAthlete() {
- return function (dispatch) {
+export const getAthlete = () => {
+ return (dispatch) => {
    dispatch(requestAthlete());
    const headers = new Headers();
    headers.append("Content-Type", "application/json");
@@ -27,4 +27,4 @@ export function getAthlete() {
        dispatch(receiveAthlete(json))
      });
   }
-}
+};

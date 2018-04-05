@@ -15,8 +15,8 @@ const receiveActivities = (activities) => {
   }
 };
 
-export function getActivities() {
-  return function (dispatch) {
+export const getActivities = () => {
+  return (dispatch) => {
     dispatch(requestActivities());
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
