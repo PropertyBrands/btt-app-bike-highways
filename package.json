@@ -1,0 +1,70 @@
+{
+  "name": "bike-highways",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "coverage": "nyc mocha",
+    "test": "mocha",
+    "test:watch": "mocha --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-redux": "^0.2.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jsdom": "^11.6.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.0.5",
+    "mocha-jsdom": "^1.1.0",
+    "nyc": "^11.6.0",
+    "react-hot-loader": "^3.1.3",
+    "style-loader": "^0.20.3",
+    "url-search-params": "^0.10.0",
+    "url-search-params-polyfill": "^3.0.0",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js*",
+      "test/**"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "moment": "^2.21.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}
