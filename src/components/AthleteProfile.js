@@ -14,8 +14,9 @@ const Profile = (props) => {
 };
 
 class AthleteProfile extends React.Component {
-  componentDidMount = () => {
-    this.props.getAthlete()
+  constructor (props) {
+    super(props);
+    props.getAthlete()
   };
 
   hasProfile = () => {

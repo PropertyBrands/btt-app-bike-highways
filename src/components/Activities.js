@@ -5,8 +5,9 @@ import {getActivities} from "../actions/activities";
 import {LoadingGraphic} from "./LoadingGraphic";
 
 class Activities extends React.Component {
-  componentDidMount = () => {
-    this.props.getActivities()
+  constructor (props) {
+    super(props);
+    props.getActivities()
   };
 
   render = () => {
